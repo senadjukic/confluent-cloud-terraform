@@ -51,3 +51,9 @@ Run `docker run --rm -it -p 9000:9000 -v $(pwd):/src im2nguyen/rover` <br> and o
 To inspect your TF artifacts during CI/CD pipeline stages, add: 
 * https://github.com/confluentinc/policy-library-confluent-terraform
 * https://github.com/mcolomerc/terraform-confluent-opa-sample/tree/main
+
+**Next steps:**
+- Add sample data over the ./python-producer
+- Add a self-managed connector that reads from a DB and pushes data to Confluent Cloud via ./self-managed-connector
+- Add a fully-managed connector over the CC UI
+
