@@ -26,7 +26,7 @@ record_name = "test-record-name"
 ```
 
 7. terraform init
-8. terraform apply
+8. terraform apply -auto-approve
 
 
 **Display also sensitive fields**
@@ -35,21 +35,15 @@ record_name = "test-record-name"
 Or simply:
 ```terraform output -raw resource-ids```
 
-**Wanna see the records in the CLI?**
-confluent kafka topic consume -b prod.domain1.sample-topic
-
-**Wanna deploy faster?**
-terraform apply -auto-approve
-
 **Monitoring**
 
 1. Modify ./metrics/metrics.yml to add your CC API Key + CC API Key Secret and specify your resource IDs
 2. Run `docker compose -f ./metrics/docker-compose.yaml up -d`
 3. Open Browser Prometheus `localhost:9090` and Grafana `localhost:3000` with `admin` & `password`
 
-**Visualize the deployed resources**
-Run and open in browser `localhost:9000`
-```docker run --rm -it -p 9000:9000 -v $(pwd):/src im2nguyen/rover```
+**Visualize the deployed resources** <br>
+Run `docker run --rm -it -p 9000:9000 -v $(pwd):/src im2nguyen/rover` <br> and open in browser `localhost:9000` <br>
+
 
 **Terraform Sentinel Policies & OPA**
 To inspect your TF artifacts during CI/CD pipeline stages, add: 
