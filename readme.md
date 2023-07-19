@@ -4,9 +4,11 @@
 1. Check if you have CC Account
 2. Check if you have Terraform https://learn.hashicorp.com/tutorials/terraform/install-cli#install-terraform
 3. Check if you have Confluent CLI
-4. Follow https://registry.terraform.io/providers/confluentinc/confluent/latest/docs/guides/sample-project#create-a-cloud-api-key
-5. Use basic-kafka-acls (https://github.com/confluentinc/terraform-provider-confluent/tree/master/examples/configurations/basic-kafka-acls) or the artifacts under ./terraform in this repo
-6. create terraform.vars file with your credentials
+
+## Run the demo
+1. Follow https://registry.terraform.io/providers/confluentinc/confluent/latest/docs/guides/sample-project#create-a-cloud-api-key
+2. Use basic-kafka-acls (https://github.com/confluentinc/terraform-provider-confluent/tree/master/examples/configurations/basic-kafka-acls) or the artifacts under ./terraform in this repo
+3. create terraform.vars file with your credentials
 
 ```
 touch terraform.tfvars
@@ -25,11 +27,11 @@ schema_namespace = "test-namespace"
 record_name = "test-record-name"
 ```
 
-7. terraform init
-8. terraform apply -auto-approve
+4. `terraform init`
+5. `terraform apply -auto-approve`
 
 
-**Display also sensitive fields**
+**Display also sensitive fields** <br>
 ```for i in $(terraform output | cut -d "=" -f1); do echo "$i = $(terraform output -raw $i)"; done```
 
 Or simply:
